@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/head.ejs" ) %>
+</head>
+
+<body>
+    <%- include("partials/top.ejs") %>
+    <%- include("partials/navbar.ejs") %>
+        <form action="/searchArea">
+            <span class="input">
+                <label for="lat">
+                    <input type="number" value="lat" placeholder="Latitude" name="lat" step="0.0001">
+                </label>
+            </span>
+            <span class="input">
+                <label for="long">
+                    <input type="number" value="long" placeholder="Longtitude" name="long" step="0.0001">
+                </label>
+            </span>
+            <button class="button">Search Location</button>
+        </form>
+        <%- include("partials/footer.ejs") %>
+</body>
+
+</html>

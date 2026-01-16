@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/head.ejs" ) %>
+</head>
+
+<body>
+    <%- include("partials/top.ejs" ) %>
+    
+    <%- include("partials/navbar.ejs" ) %>
+        <form action="/searchArea">
+            <span class="input">
+                <label for="lat">
+                    <input type="number" value="lat" placeholder="Lat" name="lat" step="0.0001">
+                </label>
+            </span>
+
+            <span class="input">
+                <label for="long">
+                    <input type="number" value="long" placeholder="Longtitude" name="long" step="0.0001">
+                </label>
+            </span>
+            <button class="button">Search Location</button>
+        </form>
+
+        <div style="display: flex; flex-direction: column; margin: 10px">
+
+            <h3>
+                <span
+                    style="background-color: rgb(206, 206, 206); padding: 13px; border-top-left-radius: 20px; border-bottom-left-radius: 20px;">
+                    Latitude: <%= lat %> Longtitude: <%= long %>
+                </span>
+                <span
+                    style="background-color: rgb(206, 206, 206); padding: 13px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;">
+                    Current Conditions:</span>
+            </h3>
+
+        </div>
+        <div class="info">
+            <div class="element" style="border-top-left-radius: 20px; border-bottom-left-radius: 20px;">
+                <h4>Temperature:</h4>
+                <div>
+                    <%= temp %>°F
+                </div>
+            </div>
+
+            <div class="element">
+                <h4>Cloud Coverage:</h4>
+                <div>
+                    <%= cloudCoverage %>%
+                </div>
+            </div>
+
+            <div class="element">
+                <h4>Wind Direction:</h4>
+                <div>
+                    <%= windDirection %>°
+                </div>
+            </div>
+
+            <div class="element">
+                <h4>Wind Speed:</h4>
+                <div>
+                    <%= windSpeed %> mph
+                </div>
+            </div>
+
+            <div class="element" style="border-top-right-radius: 20px; border-bottom-right-radius: 20px;">
+                <h4>Wind gust:</h4>
+                <div>
+                    <%= windGust %> mph
+                </div>
+            </div>
+        </div>
+        <footer>
+            <span>
+                <%- include("partials/footer.ejs" ) %>
+            </span>
+        </footer>
+</body>
+
+</html>
